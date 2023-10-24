@@ -38,8 +38,7 @@
         <table>
             <tr>
                 <td>Lp</td>
-                <td>Imię</td>
-                <td>Nazwisko</td>
+                <td>Imię Nazwisko</td>
                 <td>Usuń</td>
             </tr>
             <?php
@@ -49,8 +48,9 @@
                 while($wiersz2 = mysqli_fetch_row($wynik2)){
                     echo "<tr>
                             <td>$wiersz2[0]</td>
-                            <td>$wiersz2[1]</td>
-                            <td>$wiersz2[2]</td>
+                            <td>
+                            <a href='edycjaucznia.php?id=$wiersz2[0]'>$wiersz2[1] $wiersz2[2]</a>
+                            </td>
                             <td><a href='usun.php?id_ucznia=$wiersz2[0]'>usuń</a></td>
                         </tr>";
                 }
