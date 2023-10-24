@@ -31,8 +31,27 @@
             </select>
             <input type="submit" value="Pokaż" />
         </form>
+        <form action="uczen.php" method="post">
+            Imię <input type="text" name="imie" /> <br />
+            Nazwisko <input type="text" name="nazwisko" /> <br />
+            Id_klasa <input type="text" name="id_klasa" /> <br />
+            <input type="submit" value="Dodaj" />
+        </form>
         <?php
-            if($_POST){
+            if(isset($_POST['imie']) && isset($_POST['nazwisko']) &&isset($_POST['id_klasa'])){
+                $imie = $_POST['imie'];
+                $nazwisko = $_POST['nazwisko'];
+                $id_klasa = $_POST['id_klasa'];
+                $zapytanie3 = "INSERT INTO uczen VALUES(null, '$imie', '$nazwisko', $id_klasa)";
+                $wynik3 = mysqli_query($polaczenie, $zapytanie3);
+                if($wynik3){
+                    echo "Uczen $imie $nazwisko dodany do bazy danych";
+                }else{
+                    echo "Błąd dodawania ucznia";
+                }
+            }
+        
+            if(isset($_POST['klasa'])){
                     
         ?>
         <table>
