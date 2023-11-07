@@ -1,23 +1,15 @@
-body{
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 6fr 1fr;
-}
+
 #baner{
     background-color: beige;
-    grid-area: 1 / 1 / 1 / 5;
 }
 #menu{
     background-color: blanchedalmond;
-    grid-area: 2 / 1 / 7 / 2;
 }
 #srodek{
     background-color: antiquewhite;
-    grid-area: 2 / 2 / 7 / 5;
 }
 #stopka{
     background-color: beige;
-    grid-area: 7 / 1 / 8 / 5;
 }
 h1{
     text-align: center;
