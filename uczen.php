@@ -2,9 +2,9 @@
 include("includes/naglowek.php");
 ?>
     <div id="srodek" class="col-9 bg-light bg-gradient">
-        <h1>Wybierz klasę</h1>
+        <h3>Wybierz klasę</h3>
         <form action="uczen.php" method="post">
-            <select name="klasa">
+            <select name="klasa" class="form-select">
                 <?php
                     $polaczenie = mysqli_connect('localhost', 'root', '', 'dziennik');
                     $zapytanie1 = "SELECT id, numer, oznaczenie FROM klasa";
@@ -14,13 +14,22 @@ include("includes/naglowek.php");
                     }
                 ?>
             </select>
-            <input type="submit" value="Pokaż" />
+            <input type="submit" class="btn btn-dark" value="Pokaż" />
         </form>
         <form action="uczen.php" method="post">
-            Imię <input type="text" name="imie" /> <br />
-            Nazwisko <input type="text" name="nazwisko" /> <br />
-            Id_klasa <input type="text" name="id_klasa" /> <br />
-            <input type="submit" value="Dodaj" />
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Imię</span>
+                <input type="text" class="form-control" placeholder="Imię" name="imie" aria-label="imie" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nazwisko</span>
+                <input type="text" class="form-control" placeholder="Nazwisko" name="nazwisko" aria-label="nazwisko" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Id_klasy</span>
+                <input type="text" class="form-control" placeholder="Id_klasy" name="id_klasa" aria-label="id_klasa" aria-describedby="basic-addon1">
+            </div>
+            <input type="submit" class="btn btn-outline-dark"  value="Dodaj" />
         </form>
         <?php
             if(isset($_POST['imie']) && isset($_POST['nazwisko']) &&isset($_POST['id_klasa'])){
