@@ -29,7 +29,11 @@ include("includes/naglowek.php");
                 <span class="input-group-text" id="basic-addon1">Id_klasy</span>
                 <input type="text" class="form-control" placeholder="Id_klasy" name="id_klasa" aria-label="id_klasa" aria-describedby="basic-addon1">
             </div>
-            <input type="submit" class="btn btn-outline-dark"  value="Dodaj" />
+            <div class="hstack gap-3">
+                <input type="submit" class="btn btn-outline-dark"  value="Dodaj" />
+                <div class="vr"></div>
+                <button type="reset" class="btn btn-outline-danger">Reset</button>
+            </div>
         </form>
         <?php
             if(isset($_POST['imie']) && isset($_POST['nazwisko']) &&isset($_POST['id_klasa'])){
@@ -48,7 +52,7 @@ include("includes/naglowek.php");
             if(isset($_POST['klasa'])){
                     
         ?>
-        <table>
+        <table class="table table-striped table-hover">
             <tr>
                 <td>Lp</td>
                 <td>Imię Nazwisko</td>
@@ -62,9 +66,9 @@ include("includes/naglowek.php");
                     echo "<tr>
                             <td>$wiersz2[0]</td>
                             <td>
-                            <a href='edycjaucznia.php?id=$wiersz2[0]'>$wiersz2[1] $wiersz2[2]</a>
+                            <a href='edycjaucznia.php?id=$wiersz2[0]' class='link-body-emphasis link-offset-2 link-underline-opacity-25 link-underline-opacity-75-hover'>$wiersz2[1] $wiersz2[2]</a>
                             </td>
-                            <td><a href='usun.php?id_ucznia=$wiersz2[0]'>usuń</a></td>
+                            <td><a href='usun.php?id_ucznia=$wiersz2[0]' class='d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2'>usuń</a></td>
                         </tr>";
                 }
             ?>

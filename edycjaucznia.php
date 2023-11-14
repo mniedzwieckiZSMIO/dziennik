@@ -11,10 +11,19 @@ include("includes/naglowek.php");
         ?>
         <form action="edycjaucznia.php" method="GET">
             <input type="hidden" name="id" value="<?php echo $wiersz1[0];?>" /> <br />
-            Imię <input type="text" name="imie" value="<?php echo $wiersz1[1];?>" /> <br />
-            Nazwisko <input type="text" name="nazwisko" value="<?php echo $wiersz1[2];?>" /> <br />
-            Id_klasa <input type="text" name="id_klasa" value="<?php echo $wiersz1[3];?>" /> <br />
-            <input type="submit" value="Zmień" />
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Imię</span>
+                <input type="text" class="form-control" placeholder="Imię" name="imie" aria-label="imie" value="<?php echo $wiersz1[1];?>" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nazwisko</span>
+                <input type="text" class="form-control" placeholder="Nazwisko" name="nazwisko" aria-label="nazwisko" value="<?php echo $wiersz1[2];?>" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Id_klasy</span>
+                <input type="text" class="form-control" placeholder="Id_klasy" name="id_klasa" aria-label="id_klasa" value="<?php echo $wiersz1[3];?>"aria-describedby="basic-addon1">
+            </div>
+            <input type="submit" class="btn btn-outline-dark" value="Zmień" />
         </form>
         <?php
             if(isset($_GET['imie']) && isset($_GET['nazwisko']) && isset($_GET['id_klasa'])){
